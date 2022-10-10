@@ -1,11 +1,16 @@
 import numpy as np
 from scipy.ndimage import gaussian_filter
 from scipy import misc
+import pandas as pd
 
-__all__ = ['rand_array','smooth_image','my_mat_solve']
+__all__ = ['rand_array','smooth_image','my_mat_solve','pd_series']
 
 def my_mat_solve(A, b):
     return A.inv()*b
+
+s = pd.Series([1, 3, 5, np.nan, 6, 8])
+def pd_series(): 
+    return s  
 
 def smooth_image(a,sigma=1):
     return gaussian_filter(a,sigma=sigma)
